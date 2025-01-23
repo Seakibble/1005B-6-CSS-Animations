@@ -42,13 +42,8 @@ nav a:hover {
     color: #222;
 }
 
-a {
-    color: var(--dark-colour);
-    font-weight: bold;
-}
-a:hover {
-    color: gold;
-}
+
+
 a:visited {
     color: #444;
 }
@@ -148,4 +143,151 @@ table tr:nth-child(2n+1) {
     position: absolute;
     right: -20px;
     bottom: -20px;
+}
+
+
+
+/* CLASS 6 Code */
+a {
+    color: var(--dark-colour);
+    font-weight: bold;
+
+    /* transition: all 0.25s; */
+    transition: color 0.5s 2s, transform 1s;
+}
+a:hover {
+    color: gold;
+}
+
+h1 {
+    /* transition: padding 1s ease; */
+    /* transition: padding 1s ease-in; */
+    /* transition: padding 1s ease-out; */
+    transition: padding 1s ease-in-out;
+    /* transition: padding 1s cubic-bezier(0.075, 0.82, 0.165, 1); */
+    /* transition-property: padding;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.5s; */
+}
+h1:hover {
+    /* transition: padding 0.25s ease-in-out; */
+    transition-duration: 0.15s;
+    padding-left: 250px;
+}
+
+
+p {
+    transition: font-size 0.5s;
+}
+
+p:hover {
+    font-size: 1.1em;
+}
+
+h2 {
+    transition: transform 1s;
+    margin: 50px;
+    background-color:aquamarine;
+    border: 4px solid #444;
+}
+.translate-right:hover {
+    transform: translate(50px);
+    /* transform: translate(50px, 100px); */
+    /* transform: translateX(50px) translateY(50px); */
+}
+.scale-big:hover {
+    transform: scale(2);
+}
+.scale-small:hover {
+    transform: scale(0.2);
+}
+.scale-XY:hover {
+    transform: scaleX(0.2) scaleY(2);
+}
+
+.rotate:hover {
+    /* transform: rotate(360deg); */
+    /* transform: rotate(1rad); */
+    /* transform: rotate(0.25turn); */
+    transform: rotate(50grad);
+}
+
+.origin-left {
+    transform-origin: left;
+}
+
+.origin-bottom-left {
+    transform-origin: left bottom;
+}
+
+nav a {
+    /* animation: shake 1s infinite; */
+    /* animation: shake-loop 2s infinite; */
+    animation: shake 1s alternate ease-in-out;
+    /* animation-fill-mode: backwards;
+    animation-fill-mode: forwards; */
+    animation-fill-mode: both;
+}
+
+nav a:hover {
+    animation-duration: 3s;
+}
+
+nav a:nth-child(1) {
+    animation-delay: 0.25s;
+}
+nav a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+nav a:nth-child(3) {
+    animation-delay: 0.75s;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(-0.1turn);
+    }
+    to {
+        transform: rotate(0.1turn);
+    }
+}
+
+@keyframes shake-loop {
+    0% {
+        transform: rotate(-0.1turn);
+        color: red;
+    }
+    50% {
+        transform: rotate(0.1turn);
+        color: orange;
+    }
+    75% {
+        transform: rotate(0.2turn);
+        color: magenta;
+    }
+    100% {
+        transform: rotate(-0.1turn);
+        color: red;
+    }
+}
+
+.colours > span {
+    animation: colours 3s infinite;
+    animation-fill-mode: backwards;
+}
+
+.colours > span:nth-child(2) { animation-delay: 0.1s; }
+.colours > span:nth-child(3) { animation-delay: 0.2s; }
+.colours > span:nth-child(4) { animation-delay: 0.3s; }
+.colours > span:nth-child(5) { animation-delay: 0.4s; }
+.colours > span:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes colours {
+    0%, 100% { color: red; }
+    15% { color: orange; }
+    30% { color: yellow; }
+    45% { color: green; }
+    60% { color: blue; }
+    80% { color: magenta; }
 }
